@@ -65,8 +65,8 @@ function failExit()
         io.write("**************************************************\n")
 
         -- Wait for user
-        io.write("\nPress ENTER to quit ")
-        io.read("*l")
+        -- io.write("\nPress ENTER to quit ")
+        -- io.read("*l")
 
         -- Terminate program
         os.exit(1)
@@ -1274,85 +1274,85 @@ function test_expr(t)
     checkInterp(t, ast, input, statein, expoutput, expstateout,
       "Print >= #3")
 
-    -- Print && #1
+    -- Print and #1
     ast = {STMTxLIST, {PRINTxSTMT,
-      {{BINxOP, "&&"}, {NUMLITxVAL, "2"}, {NUMLITxVAL, "2"}}}}
+      {{BINxOP, "and"}, {NUMLITxVAL, "2"}, {NUMLITxVAL, "2"}}}}
     input = {}
     statein = deepcopy(emptystate)
     expoutput = {"1"}
     expstateout = deepcopy(statein)
     checkInterp(t, ast, input, statein, expoutput, expstateout,
-      "Print && #1")
+      "Print and #1")
 
-    -- Print && #2
+    -- Print and #2
     ast = {STMTxLIST, {PRINTxSTMT,
-      {{BINxOP, "&&"}, {NUMLITxVAL, "2"}, {NUMLITxVAL, "0"}}}}
+      {{BINxOP, "and"}, {NUMLITxVAL, "2"}, {NUMLITxVAL, "0"}}}}
     input = {}
     statein = deepcopy(emptystate)
     expoutput = {"0"}
     expstateout = deepcopy(statein)
     checkInterp(t, ast, input, statein, expoutput, expstateout,
-      "Print && #2")
+      "Print and #2")
 
-    -- Print && #3
+    -- Print and #3
     ast = {STMTxLIST, {PRINTxSTMT,
-      {{BINxOP, "&&"}, {NUMLITxVAL, "0"}, {NUMLITxVAL, "2"}}}}
+      {{BINxOP, "and"}, {NUMLITxVAL, "0"}, {NUMLITxVAL, "2"}}}}
     input = {}
     statein = deepcopy(emptystate)
     expoutput = {"0"}
     expstateout = deepcopy(statein)
     checkInterp(t, ast, input, statein, expoutput, expstateout,
-      "Print && #3")
+      "Print and #3")
 
-    -- Print && #4
+    -- Print and #4
     ast = {STMTxLIST, {PRINTxSTMT,
-      {{BINxOP, "&&"}, {NUMLITxVAL, "0"}, {NUMLITxVAL, "0"}}}}
+      {{BINxOP, "and"}, {NUMLITxVAL, "0"}, {NUMLITxVAL, "0"}}}}
     input = {}
     statein = deepcopy(emptystate)
     expoutput = {"0"}
     expstateout = deepcopy(statein)
     checkInterp(t, ast, input, statein, expoutput, expstateout,
-      "Print && #4")
+      "Print and #4")
 
-    -- Print || #1
+    -- Print or #1
     ast = {STMTxLIST, {PRINTxSTMT,
-      {{BINxOP, "||"}, {NUMLITxVAL, "2"}, {NUMLITxVAL, "2"}}}}
+      {{BINxOP, "or"}, {NUMLITxVAL, "2"}, {NUMLITxVAL, "2"}}}}
     input = {}
     statein = deepcopy(emptystate)
     expoutput = {"1"}
     expstateout = deepcopy(statein)
     checkInterp(t, ast, input, statein, expoutput, expstateout,
-      "Print || #1")
+      "Print or #1")
 
-    -- Print || #2
+    -- Print or #2
     ast = {STMTxLIST, {PRINTxSTMT,
-      {{BINxOP, "||"}, {NUMLITxVAL, "2"}, {NUMLITxVAL, "0"}}}}
+      {{BINxOP, "or"}, {NUMLITxVAL, "2"}, {NUMLITxVAL, "0"}}}}
     input = {}
     statein = deepcopy(emptystate)
     expoutput = {"1"}
     expstateout = deepcopy(statein)
     checkInterp(t, ast, input, statein, expoutput, expstateout,
-      "Print || #2")
+      "Print or #2")
 
-    -- Print || #3
+    -- Print or #3
     ast = {STMTxLIST, {PRINTxSTMT,
-      {{BINxOP, "||"}, {NUMLITxVAL, "0"}, {NUMLITxVAL, "2"}}}}
+      {{BINxOP, "or"}, {NUMLITxVAL, "0"}, {NUMLITxVAL, "2"}}}}
     input = {}
     statein = deepcopy(emptystate)
     expoutput = {"1"}
     expstateout = deepcopy(statein)
     checkInterp(t, ast, input, statein, expoutput, expstateout,
-      "Print || #3")
+      "Print or #3")
 
-    -- Print || #4
+    -- Print or #4
     ast = {STMTxLIST, {PRINTxSTMT,
-      {{BINxOP, "||"}, {NUMLITxVAL, "0"}, {NUMLITxVAL, "0"}}}}
+      {{BINxOP, "or"}, {NUMLITxVAL, "0"}, {NUMLITxVAL, "0"}}}}
     input = {}
     statein = deepcopy(emptystate)
     expoutput = {"0"}
     expstateout = deepcopy(statein)
     checkInterp(t, ast, input, statein, expoutput, expstateout,
-      "Print || #4")
+      "Print or #4")
 
     -- Longer expression
     ast =
@@ -2213,6 +2213,5 @@ io.write("\n")
 endMessage(tester:allPassed())
 
 -- Wait for user
-io.write("\nPress ENTER to quit ")
-io.read("*l")
-
+-- io.write("\nPress ENTER to quit ")
+-- io.read("*l")
