@@ -1026,7 +1026,7 @@ function test_expr(t)
 
     -- Print ! #1
     ast = {STMTxLIST, {PRINTxSTMT,
-      {{UNxOP, "!"}, {NUMLITxVAL, "5"}}}}
+      {{UNxOP, "not"}, {NUMLITxVAL, "5"}}}}
     input = {}
     statein = deepcopy(emptystate)
     expoutput = {"0"}
@@ -1036,7 +1036,7 @@ function test_expr(t)
 
     -- Print ! #2
     ast = {STMTxLIST, {PRINTxSTMT,
-      {{UNxOP, "!"}, {NUMLITxVAL, "0"}}}}
+      {{UNxOP, "not"}, {NUMLITxVAL, "0"}}}}
     input = {}
     statein = deepcopy(emptystate)
     expoutput = {"1"}
